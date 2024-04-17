@@ -1,0 +1,16 @@
+{
+  "name": "dibo",
+  "description": "A monorepo for multiple projects",
+  "version": "0.0.0-development",
+  "type": "module",
+  "workspaces": [
+    "apps/**/*"
+  ],
+  "engines": {
+    "node": "^18.17 || >=20.6.1"
+  },
+  "private": true,
+  "scripts": {
+    "start":"nx build mobarmegeen-ui --verbose"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "main",
+  "namedInputs": {
+    "src": ["{projectRoot}/src/**/*"]
+  },
+  "targetDefaults": {
+    "@nx/angular:application": {
+      "cache": true,
+      "inputs": ["src"],
+      "outputs": ["{projectRoot}/dist"]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "name": "mobarmegeen-ui",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
+  "sourceRoot": "apps/mobarmegeen/mobarmegeen-ui/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "apps/mobarmegeen/mobarmegeen-ui/dist",
+        "index": "apps/mobarmegeen/mobarmegeen-ui/src/index.html",
+        "browser": "apps/mobarmegeen/mobarmegeen-ui/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/mobarmegeen/mobarmegeen-ui/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "ssr": false,
+        "assets": [
+          "apps/mobarmegeen/mobarmegeen-ui/src/favicon.ico",
+          "apps/mobarmegeen/mobarmegeen-ui/src/assets",
+          "apps/mobarmegeen/mobarmegeen-ui/src/manifest.webmanifest",
+          "apps/mobarmegeen/mobarmegeen-ui/src/scripts.mjs",
+          "apps/mobarmegeen/mobarmegeen-ui/src/configs"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/mobarmegeen/mobarmegeen-ui/src/styles.scss",
+          "quill/dist/quill.core.css",
+          "quill/dist/quill.bubble.css",
+          "quill/dist/quill.snow.css"
+        ],
+        "scripts": [],
+        "prerender": false,
+        "define": {},
+        "namedChunks": true,
+        "preserveSymlinks": true
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "2mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb"
+            }
+          ],
+          "outputHashing": "all",
+          "namedChunks": true
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  
+  }
+}
